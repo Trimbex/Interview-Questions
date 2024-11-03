@@ -4,6 +4,8 @@ public:
     {
         int x = nums[0];
         int *y = nullptr;
+        if(nums.size() < 3)
+        return false;
         for(int i = 1; i < nums.size() ; i++)
         {
              if(y  != nullptr)
