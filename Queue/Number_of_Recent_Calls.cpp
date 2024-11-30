@@ -58,5 +58,5 @@ Constraints:
 
 1 <= t <= 10^9
 Each test case will call ping with strictly increasing values of t.
-At most 104 calls will be made to ping.
+At most 10^4 calls will be made to ping.
 */
