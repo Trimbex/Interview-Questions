@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isMovingRight(int n) {
-        return n > 0;
+        return n > 0; 
     }
 
     vector<int> asteroidCollision(vector<int>& asteroids) {
