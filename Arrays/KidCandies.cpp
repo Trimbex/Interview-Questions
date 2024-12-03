@@ -1,5 +1,5 @@
 class Solution {
-public:
+public: 
     vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
 
       vector<bool> results;
