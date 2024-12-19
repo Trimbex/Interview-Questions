@@ -3,7 +3,7 @@ public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) 
     {
     if(flowerbed[0] == 0 && n > 0)
-    {
+    { 
         if(flowerbed.size() == 1)
         {
         
