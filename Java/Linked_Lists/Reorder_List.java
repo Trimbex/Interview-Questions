@@ -42,6 +42,68 @@ The number of nodes in the list is in the range [1, 5 * 104].
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// O(1) Space complexity solution
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public void reorderList(ListNode head) {
+
+        if(head == null || head.next == null) return;
+        ListNode slow = head, fast = head;
+        while(fast != null && fast.next != null)
+        {
+            fast = fast.next.next;
+            slow = slow.next;
+
+        }
+        ListNode secondHalf = reverseList(slow.next);
+        slow.next = null;
+
+        ListNode firstHalf = head;
+
+        while(secondHalf != null)
+        {
+            ListNode tempFirst = firstHalf.next;
+            ListNode tempSecond = secondHalf.next;
+
+            firstHalf.next = secondHalf;
+            secondHalf.next = tempFirst;
+            
+            firstHalf = tempFirst;
+            secondHalf = tempSecond;
+
+        }
+        return;
+       
+    }
+
+    public ListNode reverseList(ListNode head)
+    {
+        
+        ListNode prev = null, current = head;
+
+        while(current != null)
+        {
+            ListNode nextTemp = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextTemp;
+
+        }
+        return prev;   
+      }
+}
+// O(n) Space complexity solution
 class Solution {
     public void reorderList(ListNode head) {
 
